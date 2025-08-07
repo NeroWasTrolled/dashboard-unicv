@@ -1,7 +1,11 @@
 const Auth = {
   defaultUsers: [
+ rgc3yt-codex/add-authentication-and-logout-functionality
     { email: 'gabriel.simoes@unicv.edu.br', password: 'Mudar@123', name: 'Gabriel França Dutra Simões' },
     { email: 'noelle.martins@unicv.edu.br', password: 'Mudar@123', name: 'Noelle Naira Izidoro Portes Martins' }
+    { email: 'admin@unicv.edu.br', password: '123456', name: 'Administrador' },
+    { email: 'noelle.martins@unicv.edu.br', password: 'Mudar@123', name: 'Noelle Martins' }
+ main
   ],
   getUsers() {
     const data = localStorage.getItem('users');
