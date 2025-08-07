@@ -63,10 +63,14 @@
             <div class="row">
                 <div class="col-12">
                     <div class="login-card" style="display: flex; flex-direction: column;">
+ z6my63-codex/add-authentication-and-logout-functionality
+                        <form id="login-form" class="theme-form login-form">
+
  um51cw-codex/add-authentication-and-logout-functionality
                         <form id="login-form" class="theme-form login-form">
 
                         <form class="theme-form login-form" onsubmit="event.preventDefault(); loginUser();">
+ main
  main
                             <input type="hidden" name="_token" value="sqB15Y0aDfF1NARRNCWCriGdV2dFoBFEjZNVqUbA" autocomplete="off">                            <img src="assets/images/logo/row.png"
                                  alt="Logo do UniCV"
@@ -119,7 +123,12 @@
         function loginUser() {
             const email = document.querySelector('input[name="email"]').value;
             const password = document.querySelector('input[name="password"]').value;
+ z6my63-codex/add-authentication-and-logout-functionality
+            const remember = document.querySelector('input[name="remember"]').checked;
+            if (Auth.login(email, password, remember)) {
+
             if (Auth.login(email, password)) {
+ main
                 window.location.href = 'index.html';
             } else {
                 alert('Credenciais inválidas');
@@ -129,14 +138,20 @@
         document.addEventListener('DOMContentLoaded', () => {
             fadeOutToRight();
 
+ z6my63-codex/add-authentication-and-logout-functionality
+
  um51cw-codex/add-authentication-and-logout-functionality
+ main
             const form = document.getElementById('login-form');
             form.addEventListener('submit', e => {
                 e.preventDefault();
                 loginUser();
             });
 
+ z6my63-codex/add-authentication-and-logout-functionality
 
+
+ main
  main
             if (Auth.isLoggedIn()) {
                 window.location.href = 'index.html';
