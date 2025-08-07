@@ -1,5 +1,19 @@
 const Auth = {
   defaultUsers: [
+ um51cw-codex/add-authentication-and-logout-functionality
+    { email: 'gabriel.simoes@unicv.edu.br', password: 'Mudar@123', name: 'Gabriel França Dutra Simões' },
+    { email: 'noelle.martins@unicv.edu.br', password: 'Mudar@123', name: 'Noelle Naira Izidoro Portes Martins' }
+  ],
+  getUsers() {
+    const data = localStorage.getItem('users');
+    if (data) {
+      try {
+        return JSON.parse(data);
+      } catch (e) {
+        // fall through to reset on parse error
+      }
+    }
+
  rgc3yt-codex/add-authentication-and-logout-functionality
     { email: 'gabriel.simoes@unicv.edu.br', password: 'Mudar@123', name: 'Gabriel França Dutra Simões' },
     { email: 'noelle.martins@unicv.edu.br', password: 'Mudar@123', name: 'Noelle Naira Izidoro Portes Martins' }
@@ -10,6 +24,7 @@ const Auth = {
   getUsers() {
     const data = localStorage.getItem('users');
     if (data) return JSON.parse(data);
+ main
     localStorage.setItem('users', JSON.stringify(this.defaultUsers));
     return [...this.defaultUsers];
   },
@@ -49,6 +64,11 @@ const Auth = {
   }
 };
 
+ um51cw-codex/add-authentication-and-logout-functionality
+window.Auth = Auth;
+
+
+ main
 function requireAuth() {
   if (!Auth.isLoggedIn()) {
     window.location.href = 'login.html';
