@@ -63,7 +63,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="login-card" style="display: flex; flex-direction: column;">
-                        <form class="theme-form login-form" onsubmit="event.preventDefault(); window.location.href='index.html';">
+                        <form class="theme-form login-form" onsubmit="event.preventDefault(); loginUser();">
                             <input type="hidden" name="_token" value="sqB15Y0aDfF1NARRNCWCriGdV2dFoBFEjZNVqUbA" autocomplete="off">                            <img src="assets/images/logo/row.png"
                                  alt="Logo do UniCV"
                                  class="d-block mx-auto mt-0 mb-2"
@@ -110,9 +110,24 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="assets/js/auth.js"></script>
     <link rel="modulepreload" href="build/assets/dashboard.css" /><script type="module" src="build/assets/dashboard.js" data-navigate-track="reload"></script>        <script>
+        function loginUser() {
+            const email = document.querySelector('input[name="email"]').value;
+            const password = document.querySelector('input[name="password"]').value;
+            if (Auth.login(email, password)) {
+                window.location.href = 'index.html';
+            } else {
+                alert('Credenciais inválidas');
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             fadeOutToRight();
+
+            if (Auth.isLoggedIn()) {
+                window.location.href = 'index.html';
+            }
 
             if (typeof Livewire !== 'undefined') {
                 Livewire.hook('commit.prepare', () => {
