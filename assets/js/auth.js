@@ -1,9 +1,5 @@
 const Auth = {
   defaultUsers: [
- z6my63-codex/add-authentication-and-logout-functionality
-
- um51cw-codex/add-authentication-and-logout-functionality
- main
     { email: 'gabriel.simoes@unicv.edu.br', password: 'Mudar@123', name: 'Gabriel França Dutra Simões' },
     { email: 'noelle.martins@unicv.edu.br', password: 'Mudar@123', name: 'Noelle Naira Izidoro Portes Martins' }
   ],
@@ -16,21 +12,14 @@ const Auth = {
         // fall through to reset on parse error
       }
     }
- z6my63-codex/add-authentication-and-logout-functionality
-
-
- rgc3yt-codex/add-authentication-and-logout-functionality
     { email: 'gabriel.simoes@unicv.edu.br', password: 'Mudar@123', name: 'Gabriel França Dutra Simões' },
     { email: 'noelle.martins@unicv.edu.br', password: 'Mudar@123', name: 'Noelle Naira Izidoro Portes Martins' }
     { email: 'admin@unicv.edu.br', password: '123456', name: 'Administrador' },
     { email: 'noelle.martins@unicv.edu.br', password: 'Mudar@123', name: 'Noelle Martins' }
- main
   ],
   getUsers() {
     const data = localStorage.getItem('users');
     if (data) return JSON.parse(data);
- main
- main
     localStorage.setItem('users', JSON.stringify(this.defaultUsers));
     return [...this.defaultUsers];
   },
@@ -55,7 +44,6 @@ const Auth = {
     const user = users.find(u => u.email === email && u.password === password);
     if (user) {
       localStorage.setItem('auth', JSON.stringify({ email: user.email, name: user.name }));
- main
       return true;
     }
     return false;
@@ -73,7 +61,6 @@ const Auth = {
     return false;
   },
   logout() {
- z6my63-codex/add-authentication-and-logout-functionality
     sessionStorage.removeItem('auth');
     localStorage.removeItem('auth');
   },
@@ -96,21 +83,16 @@ const Auth = {
   },
   getUser() {
     const data = localStorage.getItem('auth');
- main
     return data ? JSON.parse(data) : null;
   }
 };
 
- z6my63-codex/add-authentication-and-logout-functionality
 window.Auth = Auth;
 
 
- um51cw-codex/add-authentication-and-logout-functionality
 window.Auth = Auth;
 
 
- main
- main
 function requireAuth() {
   if (!Auth.isLoggedIn()) {
     window.location.href = 'login.html';
