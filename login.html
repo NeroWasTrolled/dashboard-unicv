@@ -9,121 +9,131 @@
     <title>Dashboard IM - UniCV</title>
     <link rel="apple-touch-icon" sizes="76x76" href="assets/images/apple-icon.png">
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
-    <link rel="preload" as="style" href="build/assets/dashboard.css" /><link rel="stylesheet" href="build/assets/dashboard.css" data-navigate-track="reload" />    </head>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+        name='viewport' />
+    <link rel="stylesheet" type="text/css"
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="preload" as="style" href="build/assets/dashboard.css" />
+    <link rel="stylesheet" href="build/assets/dashboard.css" data-navigate-track="reload" />
+</head>
 
 <body class="">
     <script>document.querySelector('body').classList.add(localStorage.getItem('body') === 'dark-only' ? 'dark-only' : 'default');</script>
-<div class="loader-wrapper">
-    <div class="theme-loader">
-        <div class="loader-p"></div>
+    <div class="loader-wrapper">
+        <div class="theme-loader">
+            <div class="loader-p"></div>
+        </div>
     </div>
-</div>
     <div id="loading_element" class="card bg-dark p-4 rounded-start shadow"
-     style="position: fixed; right: 0; top: 20px; z-index: 2000;">
-    <span class="text-white">Carregando informações</span>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_dczrdclv.json"
-                   background="rgba(0, 0, 0, 0)"
-                   speed="1"
-                   style="width: 50px; height: 50px;"
-                   loop
-                   autoplay
-    />
-</div>
-                <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top text-white">
-    <div class="container">
-        <div class="navbar-wrapper">
-            <a class="navbar-brand" href="index.html">Dashboard IM</a>
-        </div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="navbar-toggler-icon icon-bar"></span>
-            <span class="navbar-toggler-icon icon-bar"></span>
-            <span class="navbar-toggler-icon icon-bar"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end">
-            <ul class="navbar-nav">
-                
-                
-                
-                
-            </ul>
-        </div>
+        style="position: fixed; right: 0; top: 20px; z-index: 2000;">
+        <span class="text-white">Carregando informações</span>
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_dczrdclv.json" background="rgba(0, 0, 0, 0)"
+            speed="1" style="width: 50px; height: 50px;" loop autoplay />
     </div>
-</nav>
-<!-- End Navbar -->
-<div class="wrapper wrapper-full-page">
-    <div class="page-header login-page header-filter" filter-color="black" style="background-image: url('assets/images/guest-background.jpg'); background-size: cover; background-position: top center;align-items: center;" data-color="purple">
-        <!--   you can change the color of the filter page using: data-color="blue | purple | green | orange | red | rose " -->
-            <section>
-        <div class="container-fluid p-0">
-            <div class="row">
-                <div class="col-12">
-                    <div class="login-card" style="display: flex; flex-direction: column;">
-                        <form id="login-form" class="theme-form login-form">
-
-                        <form id="login-form" class="theme-form login-form">
-
-                        <form class="theme-form login-form" onsubmit="event.preventDefault(); loginUser();">
-                            <input type="hidden" name="_token" value="sqB15Y0aDfF1NARRNCWCriGdV2dFoBFEjZNVqUbA" autocomplete="off">                            <img src="assets/images/logo/row.png"
-                                 alt="Logo do UniCV"
-                                 class="d-block mx-auto mt-0 mb-2"
-                                 style="max-width: 200px">
-                            <h6 class="text-center">Olá, novamente! Entre na sua conta.</h6>
-                            <div class="form-group">
-                                <label>Email</label>
-                                <div class="input-group">
-                                    <span class="input-group-text"><i data-feather="mail"></i></span>
-                                    <input class="form-control" type="email" name="email" required
-                                           value=""
-                                           placeholder="nome.sobrenome@unicv.edu.br"/>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label>Senha</label>
-                                <div class="input-group">
-                                    <span class="input-group-text"><i data-feather="lock"></i></span>
-                                    <input class="form-control" type="password" name="password" required
-                                           placeholder="*****"/>
-                                    <div class="show-hide"><span class="show"></span></div>
-                                </div>
-                            </div>
-                            <div class="form-group" style="user-select: none">
-                                <input id="checkbox1" type="checkbox"
-                                       name="remember"  style="cursor: pointer"/>
-                                <label for="checkbox1" style="cursor: pointer; text-transform: none;">Lembrar de
-                                    mim</label>
-                                <a class="link" href="#" onclick="alert('Função ainda não disponível')">Esqueceu a senha?</a>
-                            </div>
-                            <div class="form-group">
-                                <button class="btn btn-primary btn-block" type="submit">Entrar</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top text-white">
+        <div class="container">
+            <div class="navbar-wrapper">
+                <a class="navbar-brand" href="index.html">Dashboard IM</a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" aria-controls="navigation-index"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end">
+                <ul class="navbar-nav">
+                </ul>
             </div>
         </div>
-    </section>
+    </nav>
+    <!-- End Navbar -->
+    <div class="wrapper wrapper-full-page">
+        <div class="page-header login-page header-filter" filter-color="black"
+            style="background-image: url('assets/images/guest-background.jpg'); background-size: cover; background-position: top center;align-items: center;"
+            data-color="purple">
+            <!--   you can change the color of the filter page using: data-color="blue | purple | green | orange | red | rose " -->
+            <section>
+                <div class="container-fluid p-0">
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- Dentro da div .login-card -->
+                            <div class="login-card" style="display: flex; flex-direction: column;">
+                                <form id="login-form" class="theme-form login-form"
+                                    onsubmit="event.preventDefault(); loginUser();">
+                                    <input type="hidden" name="_token" value="sqB15Y0aDfF1NARRNCWCriGdV2dFoBFEjZNVqUbA"
+                                        autocomplete="off">
+                                    <img src="assets/images/logo/row.png" alt="Logo do UniCV"
+                                        class="d-block mx-auto mt-0 mb-2" style="max-width: 200px">
+                                    <h6 class="text-center">Olá, novamente! Entre na sua conta.</h6>
+                                    <div class="form-group">
+                                        <label>Email</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i data-feather="mail"></i></span>
+                                            <input class="form-control" type="email" name="email" required
+                                                placeholder="nome.sobrenome@unicv.edu.br" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Senha</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i data-feather="lock"></i></span>
+                                            <input class="form-control" type="password" name="password" required
+                                                placeholder="*****" />
+                                            <div class="show-hide"><span class="show"></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" style="user-select: none">
+                                        <input id="checkbox1" type="checkbox" name="remember" style="cursor: pointer" />
+                                        <label for="checkbox1" style="cursor: pointer; text-transform: none;">Lembrar de
+                                            mim</label>
+                                        <a class="link" href="#" onclick="alert('Função ainda não disponível')">Esqueceu
+                                            a senha?</a>
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="btn btn-primary btn-block" type="submit">Entrar</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
     </div>
-</div>
-    
+
     <!--   Core JS Files   -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"
+        integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="assets/js/auth.js"></script>
-    <link rel="modulepreload" href="build/assets/dashboard.css" /><script type="module" src="build/assets/dashboard.js" data-navigate-track="reload"></script>        <script>
+    <link rel="modulepreload" href="build/assets/dashboard.css" />
+    <script type="module" src="build/assets/dashboard.js" data-navigate-track="reload"></script>
+    <script>
+        // Auth simulado para testes locais
+        const Auth = {
+            login: function (email, password, remember) {
+                // Simulação: aceita qualquer login onde o email contenha "@unicv"
+                return email.includes("@unicv");
+            },
+            isLoggedIn: function () {
+                return false; // Simule que o usuário ainda não está logado
+            }
+        };
+
         function loginUser() {
             const email = document.querySelector('input[name="email"]').value;
             const password = document.querySelector('input[name="password"]').value;
- z6my63-codex/add-authentication-and-logout-functionality
             const remember = document.querySelector('input[name="remember"]').checked;
-            if (Auth.login(email, password, remember)) {
 
-            if (Auth.login(email, password)) {
+            const success = Auth.login(email, password, remember);
+            if (success) {
                 window.location.href = 'index.html';
             } else {
                 alert('Credenciais inválidas');
@@ -131,26 +141,32 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            fadeOutToRight();
-            const form = document.getElementById('login-form');
-            form.addEventListener('submit', e => {
-                e.preventDefault();
-                loginUser();
-            });
-            
-            if (Auth.isLoggedIn()) {
-                window.location.href = 'index.html';
-            }
+            try {
+                fadeOutToRight();
 
-            if (typeof Livewire !== 'undefined') {
-                Livewire.hook('commit.prepare', () => {
-                    fadeInToLeft();
+                const form = document.getElementById('login-form');
+                form.addEventListener('submit', e => {
+                    e.preventDefault();
+                    loginUser();
                 });
-                Livewire.hook('commit', ({component, commit, respond, succeed, fail}) => {
-                    respond(() => {
-                        fadeOutToRight();
+
+                if (Auth?.isLoggedIn && Auth.isLoggedIn()) {
+                    window.location.href = 'index.html';
+                }
+
+                if (typeof Livewire !== 'undefined') {
+                    Livewire.hook('commit.prepare', () => {
+                        fadeInToLeft();
                     });
-                });
+                    Livewire.hook('commit', ({ component, commit, respond, succeed, fail }) => {
+                        respond(() => {
+                            fadeOutToRight();
+                        });
+                    });
+                }
+            } catch (e) {
+                console.error("Erro durante carregamento:", e);
+                fadeOutToRight(); // Garante que o loader suma
             }
         });
 
@@ -170,10 +186,11 @@
             }, 600);
         }
     </script>
+
     <script>
-    $(function () {
-                                                    })
-</script>
+        $(function () {
+        })
+    </script>
 </body>
 
 </html>
